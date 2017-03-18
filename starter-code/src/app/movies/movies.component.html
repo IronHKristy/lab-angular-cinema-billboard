@@ -1,0 +1,11 @@
+<p>
+  Bow Wow Chicka Wow Wow Movies!
+</p>
+
+<ul *ngFor = "let oneMovie of theList">
+  <li><a href="/movies/{{oneMovie.id}}"> details </a></li>
+  <li>{{oneMovie.id}}</li>
+  <li>{{oneMovie.title}}</li>
+  <li>{{oneMovie.genre}}</li>
+</ul>
+<!-- <app-movies></app-movies> -->

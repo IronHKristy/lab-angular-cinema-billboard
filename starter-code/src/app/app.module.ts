@@ -2,19 +2,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { MoviesComponent } from './movies/movies.component';
+import { MovieControlService } from './movie-control.service';
+import { HomeComponent } from './home/home.component';
+
+const routes: Routes = [
+  // { path: 'home', component: HomeComponent },
+  { path: 'movies', component: MoviesComponent },
+  { path: 'movies/:id', component: MoviesComponent }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MoviesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [MovieControlService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
