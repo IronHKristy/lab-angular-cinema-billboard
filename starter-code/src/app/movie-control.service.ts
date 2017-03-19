@@ -47,8 +47,7 @@ export class MovieControlService {
   }
 
   getMoviesById(id) {
-    this.movies = this.movies.filter(
-      (oneMovie) => oneMovie.id !== id
-    );
+    id--;
+    return this.movies[id];
   }
 }

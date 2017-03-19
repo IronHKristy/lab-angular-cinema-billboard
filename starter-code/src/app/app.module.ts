@@ -5,12 +5,12 @@ import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieControlService } from './movie-control.service';
-import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  // { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'movies', component: MoviesComponent },
   { path: 'movies/:id', component: MoviesComponent }
 ];

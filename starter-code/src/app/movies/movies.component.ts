@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
+  oneMovie: Object;
   movieId: string;
   theList = this.theMovieList.movies;
 
@@ -16,6 +17,9 @@ export class MoviesComponent implements OnInit {
   ngOnInit() {
     this.myRoute.params.subscribe((paramsResult) => {
     this.movieId = paramsResult['id'];
+    console.log(this.movieId);
+
+    this.oneMovie = this.theMovieList.getMoviesById(this.movieId);
     });
   }
 
